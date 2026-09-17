@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazel Sanat Pishro | فراز صنعت پیشرو</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0b2545;
+            --accent-color: #ffc107;
+            --text-dark: #1d2d44;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', 'Segoe UI', Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        body.en, body.ar {
+            direction: ltr;
+        }
+
+        body.fa {
+            direction: rtl;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 6px 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(11, 37, 69, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+        }
+
+        .service-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-right: 20px;
+            font-size: 0.95rem;
+        }
+
+        body.en .service-card ul li, body.ar .service-card ul li {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        .service-card ul li::before {
+            content: "✓";
+            color: var(--accent-color);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
+        body.en .service-card ul li::before, body.ar .service-card ul li::before {
+            right: auto;
+            left: 0;
+        }
+
+        .contact-info {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .phone-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+
+        .phone-numbers a {
+            color: var(--accent-color);
+            text-decoration: none;
+            direction: ltr;
+        }
+
+        footer {
+            background-color: #051329;
+            color: #aaa;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="fa">
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-cogs"></i>
+            <span id="brand-name">Fazel Sanat Pishro (Alizadeh)</span>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="setLanguage('fa')">FA</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 id="hero-title">Industrial Machining & Repair Services</h1>
+        <p id="hero-desc">All kinds of industrial machining, repair and overhaul services for industrial, oil & gas, petrochemical and power plant equipment.</p>
+        <div class="badges">
+            <span class="badge">Fast</span>
+            <span class="badge">Accurate</span>
+            <span class="badge">Reliable</span>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="services-grid">
+            
+            <!-- 1. Machining -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Machining">
+                <div class="service-content">
+                    <h3>1. <span class="c1-t">Machining & Fitting of Parts</span></h3>
+                    <ul>
+                        <li class="c1-1">Machining of all types of industrial parts</li>
+                        <li class="c1-2">Turning & milling</li>
+                        <li class="c1-3">Custom parts manufacturing</li>
+                        <li class="c1-4">Based on your drawings and specifications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Metal Spray -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Metal Spray">
+                <div class="service-content">
+                    <h3>2. <span class="c2-t">Metal Spray & Surface Repair</span></h3>
+                    <ul>
+                        <li class="c2-1">Industrial part repair</li>
+                        <li class="c2-2">Metal spray (thermal spray)</li>
+                        <li class="c2-3">Welding and machining</li>
+                        <li class="c2-4">Restoration of worn surfaces and coatings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Valves -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Valves">
+                <div class="service-content">
+                    <h3>3. <span class="c3-t">Industrial Valves - Complete Repair & Overhaul</span></h3>
+                    <ul>
+                        <li class="c3-1">Ball Valve (BV) & Gate Valve (GV)</li>
+                        <li class="c3-2">Globe Valve (GV) & Angle Valve (AV)</li>
+                        <li class="c3-3">Control Valve (CV)</li>
+                        <li class="c3-4">Safety Valve (PSV)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Pumps & Compressors -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Pumps">
+                <div class="service-content">
+                    <h3>4. <span class="c4-t">Pumps & Compressors - Repair & Overhaul</span></h3>
+                    <ul>
+                        <li class="c4-1">Centrifugal pumps</li>
+                        <li class="c4-2">Compressors</li>
+                        <li class="c4-3">Disassembly & reassembly</li>
+                        <li class="c4-4">Inspection, testing & performance restoration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. Heat Exchangers -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Heat Exchangers">
+                <div class="service-content">
+                    <h3>5. <span class="c5-t">Heat Exchangers - Repair & Fabrication</span></h3>
+                    <ul>
+                        <li class="c5-1">Tube sheet heat exchangers</li>
+                        <li class="c5-2">Plate heat exchangers</li>
+                        <li class="c5-3">Tube bundle repair</li>
+                        <li class="c5-4">Fabrication, modification & pressure testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. Hydraulic Jacks -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Jacks">
+                <div class="service-content">
+                    <h3>6. <span class="c6-t">Hydraulic & Pneumatic Jacks</span></h3>
+                    <ul>
+                        <li class="c6-1">Complete repair & overhaul</li>
+                        <li class="c6-2">Seal replacement</li>
+                        <li class="c6-3">Testing and calibration</li>
+                        <li class="c6-4">Performance improvement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 7. Gearboxes -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Gearboxes">
+                <div class="service-content">
+                    <h3>7. <span class="c7-t">Gearboxes & Reducers - Overhaul</span></h3>
+                    <ul>
+                        <li class="c7-1">Gearboxes and reducers repair</li>
+                        <li class="c7-2">Worm gear & Planetary gear</li>
+                        <li class="c7-3">Helical gear machining</li>
+                        <li class="c7-4">Inspection, repair and reassembly</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <h2 id="contact-title">Located in Ahvaz & Mahshahr</h2>
+        <p id="contact-desc">For faster response and service - Nader Alizadeh</p>
+        <div class="phone-numbers">
+            <div>📞 <a href="tel:07884989475">078 8498 9475</a></div>
+            <div>📞 <a href="tel:09158801693">0915 880 1693</a></div>
+            <div>📞 <a href="tel:09025251880">0902 525 1880</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fazel Sanat Pishro - All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            fa: {
+                brand: "فاضل صنعت پیشرو (علیزاده)",
+                heroTitle: "خدمات تخصصی تراشکاری و تعمیرات صنعتی",
+                heroDesc: "ارائه کلیه خدمات ماشین‌کاری، ساخت و تعمیر قطعات صنعتی در صنایع نفت، گاز، پتروشیمی، نیروگاهی و سایر صنایع با بالاترین دقت و کیفیت.",
+                c1t: "تراشکاری و ساخت قطعات",
+                c11: "ماشین‌کاری انواع قطعات صنعتی", c12: "تراشکاری و فرزکاری دقیق", c13: "ساخت قطعات سفارشی صنعتی", c14: "ساخت بر اساس نقشه و مشخصات فنی",
+                c2t: "متال اسپری و بازسازی سطح",
+                c21: "تعمیر و بازسازی قطعات صنعتی", c22: "پاشش حرارتی (متال اسپری)", c23: "جوشکاری و ماشین‌کاری دقیق", c24: "بازسازی سطوح فرسوده و پوشش‌دهی",
+                c3t: "تعمیر و اورهال شیرآلات صنعتی (ولو)",
+                c31: "شیر توپی (Ball) و شیر کشویی (Gate)", c32: "شیر سوزنی (Globe) و زاویه‌ای (Angle)", c33: "شیر کنترلی (Control Valve)", c34: "شیر اطمینان (Safety Valve / PSV)",
+                c4t: "پمپ و کمپرسور - تعمیر و اورهال",
+                c41: "پمپ‌های سانتریفیوژ", c42: "انواع کمپرسورها", c43: "دمونتاژ و مونتاژ تخصصی", c44: "بازرسی، تست و بازگرداندن عملکرد اولیه",
+                c5t: "مبدل‌های حرارتی - ساخت و تعمیر",
+                c51: "مبدل‌های پوسته و لوله (Tube Sheet)", c52: "مبدل‌های صفحه‌ای (Plate)", c53: "تعمیر تیوب باندل", c54: "ساخت، اصلاح و تست فشار",
+                c6t: "جک‌های هیدرولیک و پنوماتیک",
+                c61: "تعمیر کامل و اورهال جک‌ها", c62: "تعویض سیل و پکینگ‌های آب‌بندی", c63: "تست و کالیبراسیون دقیق", c64: "ارتقاء عملکرد و رفع فرسودگی",
+                c7t: "گیربکس‌ها و کاهنده‌ها - اورهال کامل",
+                c71: "تعمیر انواع گیربکس‌های صنعتی", c72: "گیربکس‌های حلزونی و خورشیدی", c73: "گیربکس‌های هلیکال", c74: "بازرسی، تعمیر و مونتاژ مجدد",
+                contactTitle: "مستقر در اهواز و ماهشهر",
+                contactDesc: "جهت پاسخگویی و ارائه خدمات سریع‌تر - نادر علیزاده"
+            },
+            en: {
+                brand: "Fazel Sanat Pishro (Alizadeh)",
+                heroTitle: "Industrial Machining & Repair Services",
+                heroDesc: "All kinds of industrial machining, repair and overhaul services for industrial, oil & gas, petrochemical and power plant equipment.",
+                c1t: "Machining & Fitting of Parts",
+                c11: "Machining of all types of industrial parts", c12: "Turning & milling", c13: "Custom parts manufacturing", c14: "Based on your drawings and specifications",
+                c2t: "Metal Spray & Surface Repair",
+                c21: "Industrial part repair", c22: "Metal spray (thermal spray)", c23: "Welding and machining", c24: "Restoration of worn surfaces and coatings",
+                c3t: "Industrial Valves - Complete Repair & Overhaul",
+                c31: "Ball Valve (BV) & Gate Valve (GV)", c32: "Globe Valve (GV) & Angle Valve (AV)", c33: "Control Valve (CV)", c34: "Safety Valve (PSV)",
+                c4t: "Pumps & Compressors - Repair & Overhaul",
+                c41: "Centrifugal pumps", c42: "Compressors", c43: "Disassembly & reassembly", c44: "Inspection, testing & performance restoration",
+                c5t: "Heat Exchangers - Repair & Fabrication",
+                c51: "Tube sheet heat exchangers", c52: "Plate heat exchangers", c53: "Tube bundle repair", c54: "Fabrication, modification & pressure testing",
+                c6t: "Hydraulic & Pneumatic Jacks",
+                c61: "Complete repair & overhaul", c62: "Seal replacement", c63: "Testing and calibration", c64: "Performance improvement",
+                c7t: "Gearboxes & Reducers - Overhaul",
+                c71: "Gearboxes and reducers repair", c72: "Worm gear & Planetary gear", c73: "Helical gear machining", c74: "Inspection, repair and reassembly",
+                contactTitle: "Located in Ahvaz & Mahshahr",
+                contactDesc: "For faster response and service - Nader Alizadeh"
+            },
+            ar: {
+                brand: "فاضل صنعت بيشرو (عليزاده)",
+                heroTitle: "خدمات الخراطة والصيانة الصناعية",
+                heroDesc: "تقديم كافة خدمات الخراطة والصيانة الشاملة للمعدات الصناعية، النفط والغاز، البتروكيماويات ومحطات الطاقة.",
+                c1t: "الخراطة وتصنيع القطع",
+                c11: "خراطة كافة أنواع القطع الصناعية", c12: "الخراطة والتفريز الدقيق", c13: "تصنيع القطع المخصصة", c14: "وفقاً للمخططات والمواصفات الفنية",
+                c2t: "الرش الحراري (المعدني) وإصلاح الأسطح",
+                c21: "صيانة وتأهيل القطع الصناعية", c22: "الرش الحراري للمستلزمات المعدنية", c23: "اللحام والخراطة الدقيقة", c24: "إعادة بناء الأسطح المتآكلة",
+                c3t: "صيانة الصمامات الصناعية (الفالفات)",
+                c31: "صمامات الكرة (Ball) والصمامات البوابية (Gate)", c32: "الصمامات الكروية (Globe) والزاوية (Angle)", c33: "صمامات التحكم (Control Valve)", c34: "صمامات الأمان (PSV)",
+                c4t: "صيانة المضخات والضواغط",
+                c41: "مضخات الطرد المركزي", c42: "مختلف أنواع الضواغط", c43: "الفك والتجميع التخصصي", c44: "الفحص، الاختبار واستعادة الأداء",
+                c5t: "المبادلات الحرارية - التصنيع والصيانة",
+                c51: "مبادلات الأنابيب والقشرة (Tube Sheet)", c52: "المبادلات اللوحية (Plate)", c53: "إصلاح حزم الأنابيب", c54: "التصنيع واختبار الضغط",
+                c6t: "المكابس الهيدروليكية والنيوماتيكية",
+                c61: "الصيانة الشاملة للمكابس", c62: "استبدال جلب وموانع التسرب", c63: "الاختبار والمعايرة الدقيقة", c64: "تحسين الأداء ورفع الكفاءة",
+                c7t: "علب التروس (القيربوکس) - صيانة شاملة",
+                c71: "إصلاح مختلف علب التروس الصناعية", c72: "التروس الحلزونية والكوكبية", c73: "التروس المائلة (Helical)", c74: "الفحص والإصلاح والتجميع",
+                contactTitle: "الموقع: الأهواز وماهشهر",
+                contactDesc: "للاستجابة السريعة وتقديم الخدمات - نادر علي زاده"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.body.className = lang;
+            const data = translations[lang];
+
+            document.getElementById('brand-name').innerText = data.brand;
+            document.getElementById('hero-title').innerText = data.heroTitle;
+            document.getElementById('hero-desc').innerText = data.heroDesc;
+
+            document.querySelector('.c1-t').innerText = data.c1t;
+            document.querySelector('.c1-1').innerText = data.c11;
+            document.querySelector('.c1-2').innerText = data.c12;
+            document.querySelector('.c1-3').innerText = data.c13;
+            document.querySelector('.c1-4').innerText = data.c14;
+
+            document.querySelector('.c2-t').innerText = data.c2t;
+            document.querySelector('.c2-1').innerText = data.c21;
+            document.querySelector('.c2-2').innerText = data.c22;
+            document.querySelector('.c2-3').innerText = data.c23;
+            document.querySelector('.c2-4').innerText = data.c24;
+
+            document.querySelector('.c3-t').innerText = data.c3t;
+            document.querySelector('.c3-1').innerText = data.c31;
+            document.querySelector('.c3-2').innerText = data.c32;
+            document.querySelector('.c3-3').innerText = data.c33;
+            document.querySelector('.c3-4').innerText = data.c34;
+
+            document.querySelector('.c4-t').innerText = data.c4t;
+            document.querySelector('.c4-1').innerText = data.c41;
+            document.querySelector('.c4-2').innerText = data.c42;
+            document.querySelector('.c4-3').innerText = data.c43;
+            document.querySelector('.c4-4').innerText = data.c44;
+
+            document.querySel
